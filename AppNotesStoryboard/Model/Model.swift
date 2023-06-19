@@ -6,3 +6,32 @@
 //
 
 import Foundation
+import CoreData
+import UIKit
+
+class Model{
+    
+    public static let shared = Model()
+    
+    func context() -> NSManagedObjectContext{
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        return delegate.persistentContainer.viewContext
+    }
+    
+    func saveData(title: String, content: String, createdAt: Date){
+        let context = context()
+        let entityNotas = NSEntityDescription.insertNewObject(forEntityName: "Notas", into: context) as! Notas
+        entityNotas.title = title
+        entityNotas.content = content
+        entityNotas.createdAt = createdAt
+        
+        do {
+            try context.save()
+            print("Se guardó la nota!")
+        } catch let error as NSError {
+            print("Error al guardar: \(error.localizedDescription)")
+        }
+        
+    }
+    
+}

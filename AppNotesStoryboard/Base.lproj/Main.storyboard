@@ -64,6 +64,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tblNotes" destination="pgR-ht-W1T" id="3Wq-MN-FqR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -77,16 +80,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Título" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oda-hk-6yi">
-                                <rect key="frame" x="21" y="105" width="349" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="aSe-Aq-aoB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" layoutMarginsFollowReadableWidth="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e8g-y2-q7m">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e8g-y2-q7m">
                                 <rect key="frame" x="16" y="153" width="354" height="302"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -102,7 +96,7 @@
                                     <constraint firstAttribute="height" constant="73" id="I1z-EW-ije"/>
                                 </constraints>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqe-h8-lHS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqe-h8-lHS">
                                 <rect key="frame" x="16" y="573" width="354" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="diJ-vf-SC0"/>
@@ -112,7 +106,15 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Guardar">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveNote:" destination="KPq-DJ-JWk" eventType="touchUpInside" id="UDZ-zn-taK"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Titulo" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VCo-Us-gHk">
+                                <rect key="frame" x="16" y="103" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bHe-jI-bA1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -120,18 +122,24 @@
                             <constraint firstItem="SKm-7m-G5U" firstAttribute="leading" secondItem="bHe-jI-bA1" secondAttribute="leading" id="182-6r-Noa"/>
                             <constraint firstItem="SKm-7m-G5U" firstAttribute="trailing" secondItem="bHe-jI-bA1" secondAttribute="trailing" id="5mc-Af-9q7"/>
                             <constraint firstItem="Zqe-h8-lHS" firstAttribute="top" secondItem="SKm-7m-G5U" secondAttribute="bottom" constant="61" id="5zJ-63-7J9"/>
-                            <constraint firstItem="oda-hk-6yi" firstAttribute="trailing" secondItem="e8g-y2-q7m" secondAttribute="trailing" id="Efo-JX-PCR"/>
-                            <constraint firstItem="oda-hk-6yi" firstAttribute="leading" secondItem="bHe-jI-bA1" secondAttribute="leading" constant="21" id="PGO-9x-7sr"/>
+                            <constraint firstItem="VCo-Us-gHk" firstAttribute="top" secondItem="bHe-jI-bA1" secondAttribute="top" constant="12" id="DDc-VT-PmW"/>
                             <constraint firstItem="bHe-jI-bA1" firstAttribute="bottom" secondItem="Zqe-h8-lHS" secondAttribute="bottom" constant="143" id="Qnx-BM-pYj"/>
-                            <constraint firstItem="oda-hk-6yi" firstAttribute="centerX" secondItem="e3v-Qg-FEC" secondAttribute="centerX" id="XMB-vL-84w"/>
+                            <constraint firstItem="e8g-y2-q7m" firstAttribute="top" secondItem="VCo-Us-gHk" secondAttribute="bottom" constant="16" id="WtJ-FC-2B7"/>
                             <constraint firstItem="e8g-y2-q7m" firstAttribute="leading" secondItem="e3v-Qg-FEC" secondAttribute="leadingMargin" id="XQ8-qM-Fgt"/>
                             <constraint firstItem="e8g-y2-q7m" firstAttribute="leading" secondItem="Zqe-h8-lHS" secondAttribute="leading" id="aJk-05-ROW"/>
-                            <constraint firstItem="e8g-y2-q7m" firstAttribute="top" secondItem="oda-hk-6yi" secondAttribute="bottom" constant="8" id="fbd-6c-Gcm"/>
-                            <constraint firstItem="oda-hk-6yi" firstAttribute="top" secondItem="bHe-jI-bA1" secondAttribute="top" constant="14" id="kDU-Mb-iB3"/>
+                            <constraint firstItem="VCo-Us-gHk" firstAttribute="trailing" secondItem="e8g-y2-q7m" secondAttribute="trailing" id="fRt-Hm-eAz"/>
+                            <constraint firstItem="VCo-Us-gHk" firstAttribute="leading" secondItem="e8g-y2-q7m" secondAttribute="leading" id="ghY-fk-Jet"/>
+                            <constraint firstItem="bHe-jI-bA1" firstAttribute="trailing" secondItem="VCo-Us-gHk" secondAttribute="trailing" constant="20" id="opH-Ro-UtO"/>
                             <constraint firstItem="e8g-y2-q7m" firstAttribute="trailing" secondItem="Zqe-h8-lHS" secondAttribute="trailing" id="uOD-xp-hKI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XxS-eZ-jmM"/>
+                    <connections>
+                        <outlet property="btnSave" destination="Zqe-h8-lHS" id="TZK-Wg-idC"/>
+                        <outlet property="content" destination="e8g-y2-q7m" id="AYL-yF-1L8"/>
+                        <outlet property="createdAt" destination="SKm-7m-G5U" id="opj-8a-Z3y"/>
+                        <outlet property="titleNote" destination="VCo-Us-gHk" id="8Hl-Gx-Wzr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SzE-b4-rGU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

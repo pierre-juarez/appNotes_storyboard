@@ -10,7 +10,7 @@
 		55A7EEC42A3B783F00C1B48F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7EEC32A3B783F00C1B48F /* AppDelegate.swift */; };
 		55A7EEC62A3B783F00C1B48F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7EEC52A3B783F00C1B48F /* SceneDelegate.swift */; };
 		55A7EECB2A3B783F00C1B48F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A7EEC92A3B783F00C1B48F /* Main.storyboard */; };
-		55A7EECE2A3B783F00C1B48F /* AppNotesStoryboard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55A7EECC2A3B783F00C1B48F /* AppNotesStoryboard.xcdatamodeld */; };
+		55A7EECE2A3B783F00C1B48F /* Notas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55A7EECC2A3B783F00C1B48F /* Notas.xcdatamodeld */; };
 		55A7EED02A3B784100C1B48F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A7EECF2A3B784100C1B48F /* Assets.xcassets */; };
 		55A7EED32A3B784100C1B48F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A7EED12A3B784100C1B48F /* LaunchScreen.storyboard */; };
 		55A7EEDD2A3B7B8000C1B48F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7EEDC2A3B7B8000C1B48F /* HomeViewController.swift */; };
@@ -70,7 +70,7 @@
 				55A7EECF2A3B784100C1B48F /* Assets.xcassets */,
 				55A7EED12A3B784100C1B48F /* LaunchScreen.storyboard */,
 				55A7EED42A3B784100C1B48F /* Info.plist */,
-				55A7EECC2A3B783F00C1B48F /* AppNotesStoryboard.xcdatamodeld */,
+				55A7EECC2A3B783F00C1B48F /* Notas.xcdatamodeld */,
 			);
 			path = AppNotesStoryboard;
 			sourceTree = "<group>";
@@ -164,7 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55A7EEC42A3B783F00C1B48F /* AppDelegate.swift in Sources */,
-				55A7EECE2A3B783F00C1B48F /* AppNotesStoryboard.xcdatamodeld in Sources */,
+				55A7EECE2A3B783F00C1B48F /* Notas.xcdatamodeld in Sources */,
 				55A7EEC62A3B783F00C1B48F /* SceneDelegate.swift in Sources */,
 				55A7EEE12A3B7C0300C1B48F /* Model.swift in Sources */,
 				55A7EEDF2A3B7B8D00C1B48F /* CreateNoteViewController.swift in Sources */,
@@ -394,13 +394,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		55A7EECC2A3B783F00C1B48F /* AppNotesStoryboard.xcdatamodeld */ = {
+		55A7EECC2A3B783F00C1B48F /* Notas.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				55A7EECD2A3B783F00C1B48F /* AppNotesStoryboard.xcdatamodel */,
 			);
 			currentVersion = 55A7EECD2A3B783F00C1B48F /* AppNotesStoryboard.xcdatamodel */;
-			path = AppNotesStoryboard.xcdatamodeld;
+			path = Notas.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
