@@ -24,6 +24,7 @@ class CreateNoteViewController: UIViewController {
     
     @IBAction func saveNote(_ sender: Any) {
         Model.shared.saveData(title: titleNote.text ?? "", content: content.text, createdAt: createdAt.date)
+        self.navigationController?.popViewController(animated: true)
     }
     
 
