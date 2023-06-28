@@ -38,6 +38,27 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "Eliminar") { _, _, _ in
+            print("Delete item...")
+            let contexto = Model.shared.context()
+            let deleteItem = self.fetchResultController.object(at: indexPath)
+            contexto.delete(deleteItem)
+            do {
+                try contexto.save()
+            } catch let error as NSError {
+                print("No se pudo eliminar, error: ",error.localizedDescription)
+            }
+        }
+        delete.image = UIImage(systemName: "trash")
+        let edit = UIContextualAction(style: .normal, title: "Editar") { _, _, _ in
+            print("Edit...")
+        }
+        edit.image = UIImage(systemName: "pencil")
+        edit.backgroundColor = UIColor.systemBlue
+        return UISwipeActionsConfiguration(actions: [delete, edit])
+    }
+    
     func showNotes(){
         let context = Model.shared.context()
         let fetchRequest: NSFetchRequest<Notas> = Notas.fetchRequest()
