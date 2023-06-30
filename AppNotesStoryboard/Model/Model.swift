@@ -34,4 +34,21 @@ class Model{
         
     }
     
+    func editData(title: String, content: String, createdAt: Date, notas: Notas){
+        
+        let context = context()
+        notas.setValue(title, forKey: "title")
+        notas.setValue(content, forKey: "content")
+        notas.setValue(createdAt, forKey: "createdAt")
+        
+        do {
+            try context.save()
+            print("Se editó la nota!")
+        } catch let error as NSError {
+            print("Error al editar: \(error.localizedDescription)")
+        }
+        
+    }
+
+    
 }

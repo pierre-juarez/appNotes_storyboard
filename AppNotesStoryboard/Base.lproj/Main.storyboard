@@ -66,6 +66,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tblNotes" destination="pgR-ht-W1T" id="3Wq-MN-FqR"/>
+                        <segue destination="KPq-DJ-JWk" kind="show" identifier="sendDataViewController" id="eyr-Af-Bsm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -96,16 +97,15 @@
                                     <constraint firstAttribute="height" constant="73" id="I1z-EW-ije"/>
                                 </constraints>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqe-h8-lHS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqe-h8-lHS">
                                 <rect key="frame" x="16" y="573" width="354" height="45"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="diJ-vf-SC0"/>
                                 </constraints>
-                                <color key="tintColor" systemColor="systemPinkColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Guardar">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Guardar"/>
                                 <connections>
                                     <action selector="saveNote:" destination="KPq-DJ-JWk" eventType="touchUpInside" id="UDZ-zn-taK"/>
                                 </connections>
@@ -166,6 +166,9 @@
             <point key="canvasLocation" x="-23.076923076923077" y="-28.436018957345969"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="eyr-Af-Bsm"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

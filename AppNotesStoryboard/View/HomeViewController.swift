@@ -14,6 +14,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var notas = [Notas]()
     var fetchResultController : NSFetchedResultsController<Notas>!
+    var indexSelected: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,12 +53,31 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         delete.image = UIImage(systemName: "trash")
         let edit = UIContextualAction(style: .normal, title: "Editar") { _, _, _ in
-            print("Edit...")
+            print("Edit item...")
+            self.indexSelected = indexPath
+            self.performSegue(withIdentifier: "sendDataViewController", sender: self)
         }
         edit.image = UIImage(systemName: "pencil")
         edit.backgroundColor = UIColor.systemBlue
         return UISwipeActionsConfiguration(actions: [delete, edit])
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "sendDataViewController", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sendDataViewController" {
+            self.indexSelected = tblNotes.indexPathForSelectedRow ?? self.indexSelected
+            if let id = self.indexSelected {
+                let fila = notas[id.row]
+                if let destino = segue.destination as? CreateNoteViewController {
+                    destino.nota = fila
+                }
+            }
+        }
+    }
+    
     
     func showNotes(){
         let context = Model.shared.context()
@@ -99,5 +119,5 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.notas = controller.fetchedObjects as! [Notas]
     }
     
-
+    
 }
